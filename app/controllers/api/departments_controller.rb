@@ -1,10 +1,12 @@
 class Api::DepartmentsController < ApplicationController
+  before_action :set_department, only: [:show, :update, :destroy]
   
   def index
     render json: Department.all
   end
 
   def show
+    render json: @department
   end
 
   def create
@@ -25,6 +27,11 @@ class Api::DepartmentsController < ApplicationController
   end
 
   private
+
+    def set_department
+      @department = Department.find(params[:id])
+    end
+
     def department_params
       params.require(:department).permit(:name)
     end

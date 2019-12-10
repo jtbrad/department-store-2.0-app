@@ -1,7 +1,6 @@
 import React, { Fragment, } from 'react';
 import { Link, } from 'react-router-dom';
 import axios from 'axios';
-import Department from './Department';
 import { Button, Card, Header, } from 'semantic-ui-react';
 
 class Departments extends React.Component {
@@ -13,6 +12,14 @@ class Departments extends React.Component {
         this.setState({ departments: res.data })
       })
   };
+
+  renderDepartment = (department) => (
+    <Card as={Link} to={`/departments/${department.id}`}>
+      <Card.Content>
+        <Card.Header>{ department.name }</Card.Header>
+      </Card.Content>
+    </Card>
+  );
 
   render() {
     const { departments, } = this.state;
@@ -28,7 +35,7 @@ class Departments extends React.Component {
               <Header as="h2">No Departments</Header>
             :
               departments.map( department => (
-                <Department key={department.id} department={department} />
+                this.renderDepartment(department)
               ))
           }
         </Card.Group>

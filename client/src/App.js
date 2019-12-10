@@ -1,6 +1,7 @@
 import React, { Fragment, } from 'react';
 import Departments from './components/Departments';
 import DepartmentForm from './components/DepartmentForm';
+import DepartmentView from './components/DepartmentView';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NoMatch from './components/NoMatch';
@@ -15,6 +16,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/departments" component={Departments} />
         <Route exact path="/departments/new" component={DepartmentForm} />
+        <Route exact path="/departments/:id" component={DepartmentView} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
