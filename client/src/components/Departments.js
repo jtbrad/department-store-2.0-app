@@ -1,7 +1,8 @@
 import React, { Fragment, } from 'react';
+import { Link, } from 'react-router-dom';
 import axios from 'axios';
 import Department from './Department';
-import { Card, Header, } from 'semantic-ui-react';
+import { Button, Card, Header, } from 'semantic-ui-react';
 
 class Departments extends React.Component {
   state = { departments: [] };
@@ -18,6 +19,9 @@ class Departments extends React.Component {
     return (
       <Fragment>
         <Header as="h1">Departments</Header>
+        <Button as={Link} to="/departments/new">Add New Department</Button>
+        <br />
+        <br />
         <Card.Group>
           {
             departments.length <= 0 ?
