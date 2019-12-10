@@ -1,10 +1,10 @@
 import React from 'react';
 import { Card, } from 'semantic-ui-react';
 
-const Department = () => (
+const Department = ({ department, }) => (
   <Card>
     <Card.Content>
-      <Card.Header>Department</Card.Header>
+      <Card.Header>{ department.name }</Card.Header>
     </Card.Content>
   </Card>
 );
