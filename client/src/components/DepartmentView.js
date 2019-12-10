@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment, } from 'react';
+import { Link, } from 'react-router-dom';
 import axios from 'axios';
-import { Header, } from 'semantic-ui-react';
+import { Button, Header, } from 'semantic-ui-react';
 
 class Department extends React.Component {
   state = { department: {} };
@@ -14,7 +15,10 @@ class Department extends React.Component {
 
   render() {
     return (
-      <Header as="h1">{ this.state.department.name }</Header>
+      <Fragment>
+          <Header as="h1">{ this.state.department.name }</Header>
+          <Button as={Link} to="/departments/new">Edit</Button>
+      </Fragment>
     );
   };
 };
