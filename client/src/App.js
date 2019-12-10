@@ -1,4 +1,5 @@
 import React, { Fragment, } from 'react';
+import Departments from './components/Departments';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NoMatch from './components/NoMatch';
@@ -11,6 +12,7 @@ const App = () => (
     <Container>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/departments" component={Departments} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
