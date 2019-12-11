@@ -1,3 +1,7 @@
+//To Do
+//Add edit and delete functionality to departments
+//Add view, create, edit, and delete functionality to items
+
 import React, { Fragment, } from 'react';
 import Departments from './components/Departments';
 import DepartmentForm from './components/DepartmentForm';
