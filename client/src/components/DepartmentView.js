@@ -31,7 +31,7 @@ class Department extends React.Component {
     return (
       <Fragment>
           <Header as="h1">{ this.state.department.name }</Header>
-          <Button as={Link} to="/departments/new">Edit</Button>
+          <Button as={Link} to={`/departments/${this.state.department.id}/edit`}>Edit</Button>
           <br />
           <br />
           <Card.Group>
