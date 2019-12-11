@@ -7,6 +7,7 @@ import Departments from './components/Departments';
 import DepartmentForm from './components/DepartmentForm';
 import DepartmentView from './components/DepartmentView';
 import Home from './components/Home';
+import ItemView from './components/ItemView';
 import Navbar from './components/Navbar';
 import NoMatch from './components/NoMatch';
 import { Route, Switch } from 'react-router-dom';
@@ -22,6 +23,7 @@ const App = () => (
         <Route exact path="/departments/new" component={DepartmentForm} />
         <Route exact path="/departments/:id" component={DepartmentView} />
         <Route exact path="/departments/:id/edit" component={DepartmentForm} />
+        <Route exact path="/departments/:department_id/items/:id" component={ItemView} />
         <Route component={NoMatch} />
       </Switch>
     </Container>

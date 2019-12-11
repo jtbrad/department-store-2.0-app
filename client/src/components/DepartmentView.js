@@ -25,7 +25,7 @@ class Department extends React.Component {
   };
 
   renderItem = (item) => (
-    <Card>
+    <Card as={Link} to={`/departments/${this.state.department.id}/items/${item.id}`}>
       <Card.Content>
         <Card.Header>{ item.name }</Card.Header>
         <Card.Meta>{ item.description }</Card.Meta>
