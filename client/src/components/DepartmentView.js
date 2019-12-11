@@ -17,6 +17,13 @@ class Department extends React.Component {
       })
   };
 
+  handleDelete = () => {
+    axios.delete(`/api/departments/${this.props.match.params.id}`)
+      .then( res => {
+        this.props.history.push("/departments")
+      })
+  };
+
   renderItem = (item) => (
     <Card>
       <Card.Content>
@@ -32,6 +39,7 @@ class Department extends React.Component {
       <Fragment>
           <Header as="h1">{ this.state.department.name }</Header>
           <Button as={Link} to={`/departments/${this.state.department.id}/edit`}>Edit</Button>
+          <Button onClick={this.handleDelete}>Delete</Button>
           <br />
           <br />
           <Card.Group>

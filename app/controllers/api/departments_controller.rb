@@ -31,6 +31,7 @@ class Api::DepartmentsController < ApplicationController
   end
 
   def destroy
+    @department.destroy
   end
 
   private
