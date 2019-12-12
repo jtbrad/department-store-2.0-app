@@ -1,3 +1,4 @@
+//Styled components are located in the departments and itemview components
 //To Do
 //Add edit, and delete functionality to items
 
