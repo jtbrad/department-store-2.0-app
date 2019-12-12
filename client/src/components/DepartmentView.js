@@ -2,6 +2,7 @@ import React, { Fragment, } from 'react';
 import { Link, } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Header, Card, } from 'semantic-ui-react';
+import StyledButton from '../styles/StyledButton';
 
 class Department extends React.Component {
   state = { department: {}, items: [], };
@@ -38,8 +39,9 @@ class Department extends React.Component {
     return (
       <Fragment>
           <Header as="h1">{ this.state.department.name }</Header>
-          <Button as={Link} to={`/departments/${this.state.department.id}/edit`}>Edit</Button>
-          <Button onClick={this.handleDelete}>Delete</Button>
+          <StyledButton as={Link} to={`/departments/${this.state.department.id}/items/new`}>Add New Item</StyledButton>
+          <StyledButton type="edit" as={Link} to={`/departments/${this.state.department.id}/edit`}>Edit</StyledButton>
+          <StyledButton type="delete" onClick={this.handleDelete}>Delete</StyledButton>
           <br />
           <br />
           <Card.Group>
