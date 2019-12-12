@@ -34,7 +34,6 @@ class Department extends React.Component {
     </Card>
   );
   
-
   render() {
     return (
       <Fragment>
